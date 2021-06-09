@@ -32,15 +32,17 @@ public class PlayerController : MonoBehaviour
         {
             transform.localScale = new Vector3(1, 1, 1);
         }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            rb.AddForce(Vector2.up * jumpForce);
+            print("JUMP!");
+        }
     }
 
     private void FixedUpdate()
     {
         transform.position += inputs;
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(Vector2.up * jumpForce);
-        }
     }
 }

@@ -23,8 +23,8 @@ public class GameManager : MonoBehaviour
         if(health <= 0)
         {
             PlayerController.instance.gameObject.GetComponent<PlayerController>().enabled = false;
-            player.GetComponent<BoxCollider2D>().enabled = false;
-            player.transform.Rotate(0, 0, 10);
+            player.GetComponent<CircleCollider2D>().enabled = false;
+            player.transform.Rotate(0, 0, 3);
 
             CameraController.instance.target = CameraController.instance.gameObject;
         }
