@@ -34,7 +34,7 @@ ExportedObj/
 sysinfo.txt
 
 # Unity3D Log Files
-*.logs
+*.log
 
 # Builds
 *.apk
