@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public float score = 0;
+    public float healthLossRate;
 
     public float health;
 
@@ -15,6 +16,10 @@ public class GameManager : MonoBehaviour
     {
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
+    }
+    private void FixedUpdate()
+    {
+        health -= healthLossRate;
     }
 
     private void Update()

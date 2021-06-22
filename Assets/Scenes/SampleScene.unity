@@ -500,6 +500,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   score: 0
+  healthLossRate: 0.01
   health: 100
 --- !u!4 &680547927
 Transform:
