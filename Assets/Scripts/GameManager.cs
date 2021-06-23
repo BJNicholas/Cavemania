@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public float score = 0;
+    float yPos;
     public float healthLossRate;
 
     public float health;
@@ -20,6 +21,7 @@ public class GameManager : MonoBehaviour
     private void FixedUpdate()
     {
         health -= healthLossRate * (health / 100);
+        health = Mathf.Clamp(health, 0, 100);
     }
 
     private void Update()
@@ -35,7 +37,16 @@ public class GameManager : MonoBehaviour
         }
         else
         {
-            score = -player.transform.position.y;
+            yPos = -player.transform.position.y;
+            ScoreCheck();
+        }
+    }
+
+    void ScoreCheck()
+    {
+        if(yPos > score)
+        {
+            score = yPos;
         }
     }
 
