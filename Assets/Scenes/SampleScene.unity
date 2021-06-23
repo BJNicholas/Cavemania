@@ -548,6 +548,7 @@ MonoBehaviour:
   blocks:
   - {fileID: 2972238326260735764, guid: 1dd154660e8ca024f8d653fcbc5bfb1c, type: 3}
   - {fileID: 6731793355350352507, guid: 8adb337027f1ef24fa3bce957e3c05de, type: 3}
+  - {fileID: 6241457903813730962, guid: 52bb12847a9eb394abafca0ab2ab6343, type: 3}
   spawnDistance: 20
 --- !u!4 &680779702
 Transform:
