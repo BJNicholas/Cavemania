@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
     }
     private void FixedUpdate()
     {
-        health -= healthLossRate;
+        health -= healthLossRate * (health / 100);
     }
 
     private void Update()
