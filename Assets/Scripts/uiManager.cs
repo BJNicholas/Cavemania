@@ -12,7 +12,7 @@ public class uiManager : MonoBehaviour
 
     private void Update()
     {
-        scoreTXT.text = GameManager.instance.score.ToString("00");
         healthBar.value = GameManager.instance.health;
+        scoreTXT.text = GameManager.instance.score.ToString("00");
     }
 }
