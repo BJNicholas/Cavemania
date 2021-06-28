@@ -425,7 +425,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: speed
-      value: 10
+      value: 75
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
@@ -600,7 +600,7 @@ GameObject:
   m_Layer: 0
   m_Name: Spawner
   m_TagString: Untagged
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -620,7 +620,6 @@ MonoBehaviour:
   - {fileID: 2972238326260735764, guid: 1dd154660e8ca024f8d653fcbc5bfb1c, type: 3}
   - {fileID: 6731793355350352507, guid: 8adb337027f1ef24fa3bce957e3c05de, type: 3}
   - {fileID: 6241457903813730962, guid: 52bb12847a9eb394abafca0ab2ab6343, type: 3}
-  - {fileID: 659022819171149096, guid: d9450c41fb01554458234cca175c57cb, type: 3}
   - {fileID: 699986305154468873, guid: 5eb6e4d30e1b7314e85049a272b59783, type: 3}
   spawnDistance: 20
 --- !u!4 &680779702
@@ -782,7 +781,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: -7371934447103273201, guid: 1dd154660e8ca024f8d653fcbc5bfb1c, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1dd154660e8ca024f8d653fcbc5bfb1c, type: 3}
 --- !u!1 &1074101633
 GameObject:

@@ -4,12 +4,14 @@ using UnityEngine;
 
 public class SpawnerScript : MonoBehaviour
 {
+    public static SpawnerScript instance;
     public GameObject[] blocks;
     public float spawnDistance;
     GameObject player;
 
     private void Start()
     {
+        instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         SpawnBlock();
     }
