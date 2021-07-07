@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
 
     public float health;
     public GameObject GameOver;
+    public GameObject PauseGame;
+    private bool paused = false;
 
     GameObject player;
 
@@ -43,6 +45,8 @@ public class GameManager : MonoBehaviour
         {
             yPos = -player.transform.position.y;
             ScoreCheck();
+            PauseGameMenu();
+
         }
     }
 
@@ -60,14 +64,48 @@ public class GameManager : MonoBehaviour
 
         if (Input.GetKeyDown("r"))
         {
-            Debug.Log("Replaying Game...");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
         else if (Input.GetKeyDown("m"))
         {
-            Debug.Log("Returning to Main Menu...");
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+
+    }
+
+    void PauseGameMenu()
+    {
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            PauseGame.SetActive(true);
+            Time.timeScale = 0;
+            paused = true;
+        }
+
+        if (paused)
+        {
+            if (Input.GetKeyDown("r"))
+            {
+                Time.timeScale = 1;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                paused = false;
+            }
+
+            else if (Input.GetKeyDown(KeyCode.Return))
+            {
+                Time.timeScale = 1;
+                PauseGame.SetActive(false);
+                paused = false;
+            }
+
+            else if (Input.GetKeyDown("m"))
+            {
+                Time.timeScale = 1;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+                paused = false;
+            }
         }
 
     }
