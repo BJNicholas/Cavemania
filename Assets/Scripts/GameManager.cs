@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class GameManager : MonoBehaviour
     public float healthLossRate;
 
     public float health;
+    public GameObject GameOver;
 
     GameObject player;
 
@@ -27,13 +29,15 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
 
-        if(health <= 0)
+        if (health <= 0)
         {
             PlayerController.instance.gameObject.GetComponent<PlayerController>().enabled = false;
             player.GetComponent<CircleCollider2D>().enabled = false;
             player.transform.Rotate(0, 0, 3);
 
             CameraController.instance.target = CameraController.instance.gameObject;
+
+            GameOverMenu();
         }
         else
         {
@@ -44,10 +48,28 @@ public class GameManager : MonoBehaviour
 
     void ScoreCheck()
     {
-        if(yPos > score)
+        if (yPos > score)
         {
             score = yPos;
         }
+    }
+
+    void GameOverMenu()
+    {
+        GameOver.SetActive(true);
+
+        if (Input.GetKeyDown("r"))
+        {
+            Debug.Log("Replaying Game...");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        else if (Input.GetKeyDown("m"))
+        {
+            Debug.Log("Returning to Main Menu...");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+
     }
 
 }
