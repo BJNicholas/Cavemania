@@ -8,6 +8,7 @@ public class SpawnerScript : MonoBehaviour
     public GameObject[] blocks;
     public float spawnDistance;
     GameObject player;
+    public GameObject organiser;
 
     private void Start()
     {
@@ -26,7 +27,7 @@ public class SpawnerScript : MonoBehaviour
 
     void SpawnBlock()
     {
-        GameObject newBlock = Instantiate(blocks[Random.Range(0,blocks.Length)]);
+        GameObject newBlock = Instantiate(blocks[Random.Range(0,blocks.Length)], organiser.transform);
         newBlock.transform.position = new Vector3(Random.Range(-7, 8), transform.position.y, 0);
 
         transform.position -= new Vector3(0, 1, 0);

@@ -22,8 +22,8 @@ public class PlayerController : MonoBehaviour
         inputs.x = Input.GetAxis("Horizontal");
         inputs.y = 0;
 
-        inputs = inputs.normalized * speed * Time.deltaTime;
-
+        inputs = inputs * speed * Time.deltaTime;
+        
         if(inputs.x < 0)
         {
             transform.localScale = new Vector3(-1, 1, 1);
@@ -42,7 +42,18 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        transform.position += inputs;
-
+        //transform.position += inputs;
+        rb.AddForce(Vector2.right * inputs.x);
+        print(inputs.x);
+        
+        if(inputs.x == 0 )
+        {
+            print("not pressing");
+            while(((Vector2)GetComponent<Rigidbody2D>().velocity).x != 0)
+            {
+                rb.AddForce(Vector2.right * -10);
+            }
+        }
+        
     }
 }
