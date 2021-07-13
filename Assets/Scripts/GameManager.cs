@@ -43,11 +43,6 @@ public class GameManager : MonoBehaviour
             yPos = -player.transform.position.y;
             ScoreCheck();
         }
-
-        if(PlayerController.instance.jumping == false)
-        {
-            mana += 0.1f;
-        }
         //clamp values
         health = Mathf.Clamp(health, 0, 100);
         mana = Mathf.Clamp(mana, 0, 100);

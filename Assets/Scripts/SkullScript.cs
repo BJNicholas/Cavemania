@@ -5,6 +5,8 @@ using UnityEngine;
 public class SkullScript : MonoBehaviour
 {
     public float speed;
+    public AudioClip biteSound;
+    public AudioClip flyingSound;
 
     Rigidbody2D rb;
     GameObject player;
@@ -26,6 +28,21 @@ public class SkullScript : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             GameManager.instance.health -= 1;
+
+            GetComponent<AudioSource>().clip = biteSound;
+            if (GetComponent<AudioSource>().isPlaying == false && GetComponent<AudioSource>().clip == biteSound)
+            {
+                GetComponent<AudioSource>().Play();
+            }
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Player")
+        {
+            GetComponent<AudioSource>().clip = flyingSound;
+            GetComponent<AudioSource>().Play();
+
         }
     }
 }
