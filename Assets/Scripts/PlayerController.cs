@@ -5,11 +5,21 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public static PlayerController instance;
+    [Header("Stats")]
     public float speed;
     public float jumpForce;
-    Vector3 inputs;
+    [Range(0, 1)]
+    public float gravityEffectOnPlayer = 1;
 
+
+    Vector3 inputs;
+    public bool jumping = false;
     Rigidbody2D rb;
+
+    [Header("Weapon details")]
+    public GameObject firePoint;
+    public GameObject fireObject;
+    public float rateOfFire;
 
     private void Start()
     {
@@ -24,36 +34,64 @@ public class PlayerController : MonoBehaviour
 
         inputs = inputs * speed * Time.deltaTime;
         
-        if(inputs.x < 0)
-        {
-            transform.localScale = new Vector3(-1, 1, 1);
-        }
-        if (inputs.x > 0)
-        {
-            transform.localScale = new Vector3(1, 1, 1);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            rb.AddForce(Vector2.up * jumpForce);
-            print("JUMP!");
-        }
     }
-
+    float coolDown = 0;
     private void FixedUpdate()
     {
-        //transform.position += inputs;
-        rb.AddForce(Vector2.right * inputs.x);
-        print(inputs.x);
-        
-        if(inputs.x == 0 )
+        coolDown += 1;
+        //"Jumping"
+        if (Input.GetKey(KeyCode.Space) && GameManager.instance.mana != 0)
         {
-            print("not pressing");
-            while(((Vector2)GetComponent<Rigidbody2D>().velocity).x != 0)
+            rb.AddForce(Vector2.up * jumpForce);
+            jumping = true;
+            GameManager.instance.mana -= 1f;
+            gravityEffectOnPlayer = 0;
+
+            if(coolDown >= rateOfFire)
             {
-                rb.AddForce(Vector2.right * -10);
+                GameObject slimeBall = Instantiate(fireObject);
+                slimeBall.transform.position = firePoint.transform.position;
+                coolDown = 0;
+            }
+            
+        }
+        else
+        {
+            gravityEffectOnPlayer = Mathf.Lerp(gravityEffectOnPlayer, 1, 0.1f);
+            if (gravityEffectOnPlayer >= 0.99f)
+            {
+                jumping = false;
             }
         }
+        //Gravity
+
+        rb.AddForce(Vector2.up * (-GameManager.instance.gravityStrength * gravityEffectOnPlayer));
+
+        //left/right movement
+        rb.MovePosition(new Vector2(transform.position.x + inputs.x, transform.position.y));
+
+        //counter movement when not inputing for snappier stops
+        if(inputs.x == 0 )
+        {
+            rb.velocity = new Vector2(0, rb.velocity.y);
+        }
         
+    }
+
+    //collision detection 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag != "Wall")
+        {
+            gravityEffectOnPlayer = 0;
+        }
+        else
+        {
+            gravityEffectOnPlayer = 1;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        gravityEffectOnPlayer = 1;
     }
 }

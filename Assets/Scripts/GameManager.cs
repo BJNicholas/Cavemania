@@ -7,9 +7,11 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     public float score = 0;
     float yPos;
+    public float gravityStrength;
     public float healthLossRate;
 
     public float health;
+    public float mana;
 
     GameObject player;
 
@@ -26,12 +28,13 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
         if(health <= 0)
         {
             PlayerController.instance.gameObject.GetComponent<PlayerController>().enabled = false;
             player.GetComponent<CircleCollider2D>().enabled = false;
+            player.GetComponent<BoxCollider2D>().enabled = false;
             player.transform.Rotate(0, 0, 3);
+            player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * (-gravityStrength * Time.deltaTime));
 
             CameraController.instance.target = CameraController.instance.gameObject;
         }
@@ -40,6 +43,14 @@ public class GameManager : MonoBehaviour
             yPos = -player.transform.position.y;
             ScoreCheck();
         }
+
+        if(PlayerController.instance.jumping == false)
+        {
+            mana += 0.1f;
+        }
+        //clamp values
+        health = Mathf.Clamp(health, 0, 100);
+        mana = Mathf.Clamp(mana, 0, 100);
     }
 
     void ScoreCheck()
