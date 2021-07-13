@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(BoxCollider2D))]
-public class HealthPickup : MonoBehaviour
+public class ManaPickUpScript : MonoBehaviour
 {
-    public float healthValue;
-    
+    public float manaValue;
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")
         {
-            GameManager.instance.health += healthValue;
+            GameManager.instance.mana += manaValue;
             GetComponent<AudioSource>().Play();
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;

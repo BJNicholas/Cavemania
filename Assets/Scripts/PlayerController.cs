@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public float gravityEffectOnPlayer = 1;
 
 
-    Vector3 inputs;
+    public Vector3 inputs;
     public bool jumping = false;
     Rigidbody2D rb;
 
@@ -20,6 +20,10 @@ public class PlayerController : MonoBehaviour
     public GameObject firePoint;
     public GameObject fireObject;
     public float rateOfFire;
+
+    [Header("Audio Clips")]
+    public AudioClip jumpSound;
+    public AudioClip runSound;
 
     private void Start()
     {
@@ -38,6 +42,7 @@ public class PlayerController : MonoBehaviour
     float coolDown = 0;
     private void FixedUpdate()
     {
+        print(rb.velocity.y);
         coolDown += 1;
         //"Jumping"
         if (Input.GetKey(KeyCode.Space) && GameManager.instance.mana != 0)
@@ -50,6 +55,9 @@ public class PlayerController : MonoBehaviour
             if(coolDown >= rateOfFire)
             {
                 GameObject slimeBall = Instantiate(fireObject);
+                GetComponent<AudioSource>().loop = false;
+                GetComponent<AudioSource>().clip = jumpSound;
+                GetComponent<AudioSource>().Play();
                 slimeBall.transform.position = firePoint.transform.position;
                 coolDown = 0;
             }
@@ -75,6 +83,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.velocity = new Vector2(0, rb.velocity.y);
         }
+
         
     }
 
