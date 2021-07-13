@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -14,6 +15,10 @@ public class GameManager : MonoBehaviour
     public float mana;
 
     GameObject player;
+    public GameObject GameOverMenu;
+    public GameObject PauseMenu;
+
+    bool isPaused = false;
 
     private void Start()
     {
@@ -37,11 +42,31 @@ public class GameManager : MonoBehaviour
             player.GetComponent<Rigidbody2D>().AddForce(Vector2.up * (-gravityStrength * Time.deltaTime));
 
             CameraController.instance.target = CameraController.instance.gameObject;
+
+            GameOverMenu.SetActive(true);
+            GameOver();
         }
         else
         {
             yPos = -player.transform.position.y;
             ScoreCheck();
+
+            if(Input.GetKeyDown(KeyCode.Escape))
+            {
+                PauseMenu.SetActive(true);                
+                PauseGame();
+            }
+            if(isPaused)
+            {
+                if(Input.GetKeyDown("r"))
+                {
+                    ResumeGame();
+                }
+                else if(Input.GetKeyDown("m"))
+                {
+                    MainMenu();
+                }
+            }
         }
 
         if(PlayerController.instance.jumping == false)
@@ -59,6 +84,53 @@ public class GameManager : MonoBehaviour
         {
             score = yPos;
         }
+    }
+
+    public void GameOver()
+    {
+        if(Input.GetKeyDown("r"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+        else if(Input.GetKeyDown("m"))
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        }
+    }
+
+    void PauseGame()
+    {
+        if (isPaused)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                Time.timeScale = 1;
+                PauseMenu.SetActive(false);
+                isPaused = false;
+            }
+
+        }
+        else
+        {
+            Time.timeScale = 0;
+            isPaused = true;
+        }
+    }
+
+    void ResumeGame()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        Time.timeScale = 1;
+        PauseMenu.SetActive(false);
+        isPaused = false;
+    }
+
+    void MainMenu()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        Time.timeScale = 1;
+        PauseMenu.SetActive(false);
+        isPaused = false;
     }
 
 }
