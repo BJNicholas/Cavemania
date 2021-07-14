@@ -122,6 +122,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef3f1efecda0ec54790cb993941de202, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  decoyChance: 5
+  decoyChance: 10
   isDecoy: 0
   demonBox: {fileID: 659022819171149096, guid: d9450c41fb01554458234cca175c57cb, type: 3}
