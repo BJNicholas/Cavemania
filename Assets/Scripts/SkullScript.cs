@@ -10,7 +10,7 @@ public class SkullScript : MonoBehaviour
 
     Rigidbody2D rb;
     GameObject player;
-
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();

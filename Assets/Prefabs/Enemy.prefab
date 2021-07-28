@@ -139,6 +139,7 @@ MonoBehaviour:
   speed: 5
   biteSound: {fileID: 8300000, guid: 38f11f05cf5b86b469fa4dbc1f7893b7, type: 3}
   flyingSound: {fileID: 8300000, guid: 03706a3bad097004b85b898770839e06, type: 3}
+  callAnim: {fileID: -1178379705182932297, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
 --- !u!95 &344345869177662450
 Animator:
   serializedVersion: 3

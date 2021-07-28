@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5958285796658372920}
   - component: {fileID: 3993950791717526273}
   - component: {fileID: 181018061822169823}
+  - component: {fileID: -1178379705182932297}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -185,10 +186,25 @@ MonoBehaviour:
   speed: 150
   jumpForce: 100
   gravityEffectOnPlayer: 1
+  inputs: {x: 0, y: 0, z: 0}
   jumping: 0
   firePoint: {fileID: 5361359003300347440}
   fireObject: {fileID: 4132537094355952122, guid: 9d28dfde28d2e1149b1159487fa947da, type: 3}
   rateOfFire: 0
+  jumpSound: {fileID: 0}
+  runSound: {fileID: 0}
+--- !u!114 &-1178379705182932297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181018061822169822}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c616e146cf1b85949b6fd23e24cbaa17, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5361359003300347440
 GameObject:
   m_ObjectHideFlags: 0
