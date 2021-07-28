@@ -20,6 +20,7 @@ public class GameManager : MonoBehaviour
     public GameObject HowToPlayMenu;
 
     bool isPaused = true;
+    bool tutorialOn = true;
 
     private void Start()
     {
@@ -55,10 +56,11 @@ public class GameManager : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.Escape))
             {
-                PauseMenu.SetActive(true);            
+                PauseMenu.SetActive(true);
+                tutorialOn = false;
                 PauseGame();
             }
-            if(isPaused)
+            if(isPaused && !tutorialOn)
             {
                 if(Input.GetKeyDown("r"))
                 {
