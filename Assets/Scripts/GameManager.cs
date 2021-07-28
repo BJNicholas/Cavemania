@@ -17,13 +17,15 @@ public class GameManager : MonoBehaviour
     GameObject player;
     public GameObject GameOverMenu;
     public GameObject PauseMenu;
+    public GameObject HowToPlayMenu;
 
-    bool isPaused = false;
+    bool isPaused = true;
 
     private void Start()
     {
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
+        Time.timeScale = 0;
     }
     private void FixedUpdate()
     {
@@ -53,14 +55,14 @@ public class GameManager : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.Escape))
             {
-                PauseMenu.SetActive(true);                
+                PauseMenu.SetActive(true);            
                 PauseGame();
             }
             if(isPaused)
             {
                 if(Input.GetKeyDown("r"))
                 {
-                    ResumeGame();
+                    RestartGame();
                 }
                 else if(Input.GetKeyDown("m"))
                 {
@@ -101,6 +103,7 @@ public class GameManager : MonoBehaviour
             {
                 Time.timeScale = 1;
                 PauseMenu.SetActive(false);
+                HowToPlayMenu.SetActive(false);
                 isPaused = false;
             }
 
@@ -112,7 +115,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void ResumeGame()
+    void RestartGame()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         Time.timeScale = 1;
