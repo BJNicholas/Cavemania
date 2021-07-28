@@ -576,6 +576,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 181018061822169816, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 181018061822169818, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: m_RootOrder
       value: 4
@@ -630,7 +634,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: speed
-      value: 25
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: runSound
@@ -647,6 +651,10 @@ PrefabInstance:
     - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: rateOfFire
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 5958285796658372920, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
@@ -1773,6 +1781,7 @@ GameObject:
   - component: {fileID: 1207423176}
   - component: {fileID: 1207423175}
   - component: {fileID: 1207423177}
+  - component: {fileID: 1207423178}
   m_Layer: 0
   m_Name: Wall_right
   m_TagString: Wall
@@ -1892,6 +1901,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &1207423178
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1207423173}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a16ce3610646b44b1cec52a32a462d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1245110576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1983,6 +2004,7 @@ GameObject:
   - component: {fileID: 1352587836}
   - component: {fileID: 1352587835}
   - component: {fileID: 1352587837}
+  - component: {fileID: 1352587838}
   m_Layer: 0
   m_Name: Wall_left
   m_TagString: Wall
@@ -2102,6 +2124,18 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 5
+--- !u!114 &1352587838
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1352587833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63a16ce3610646b44b1cec52a32a462d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1569332701
 GameObject:
   m_ObjectHideFlags: 0
