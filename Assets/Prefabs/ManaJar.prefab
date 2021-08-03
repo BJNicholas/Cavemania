@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1897700065348323451}
   - component: {fileID: 8019266491741932005}
   - component: {fileID: -1054733130162936350}
+  - component: {fileID: -6720382942392980218}
   m_Layer: 0
   m_Name: ManaJar
   m_TagString: Untagged
@@ -220,3 +221,22 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!95 &-6720382942392980218
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126208892767307832}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f605afbee3e5b404e8cde527b3f62444, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
