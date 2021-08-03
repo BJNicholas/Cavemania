@@ -20,6 +20,10 @@ public class SkullScript : MonoBehaviour
     private void Update()
     {
         gameObject.transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        if (player.transform.position.y < transform.position.y - 30)
+        {
+            Destroy(gameObject);
+        }
     }
 
 

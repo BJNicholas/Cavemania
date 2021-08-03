@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public float score = 0;
+    public float bankedScore;
     float yPos;
     public float gravityStrength;
     public float healthLossRate;
@@ -16,6 +18,8 @@ public class GameManager : MonoBehaviour
 
     GameObject player;
     public GameObject GameOverMenu;
+    public Text trueScore;
+    public Text pickupBonus;
     public GameObject PauseMenu;
     public GameObject HowToPlayMenu;
 
@@ -32,11 +36,22 @@ public class GameManager : MonoBehaviour
     {
         health -= healthLossRate * (health / 100);
         health = Mathf.Clamp(health, 0, 100);
+
+        trueScore.text = score.ToString("00");
+        pickupBonus.text = bankedScore.ToString();
+        if (health <= 0)
+        {
+            if (bankedScore > 0)
+            {
+                bankedScore -= 1;
+                score += 1;
+            }
+        }
     }
 
     private void Update()
     {
-        if(health <= 0)
+        if (health <= 0)
         {
             PlayerController.instance.gameObject.GetComponent<PlayerController>().enabled = false;
             player.GetComponent<CircleCollider2D>().enabled = false;
