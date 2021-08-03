@@ -6,7 +6,20 @@ public class ManaPickUpScript : MonoBehaviour
 {
     public float manaValue;
 
+    GameObject player;
 
+
+    private void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+    }
+    private void Update()
+    {
+        if (player.transform.position.y < transform.position.y - 10)
+        {
+            Destroy(gameObject);
+        }
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.gameObject.tag == "Player")

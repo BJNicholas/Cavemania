@@ -9,12 +9,23 @@ public class BlockScript : MonoBehaviour
     public bool isDecoy = false;
 
     public GameObject demonBox;
+
+    GameObject player;
     private void Awake()
     {
+        player = GameObject.FindGameObjectWithTag("Player");
         int roll = Random.Range(0, decoyChance);
         if(roll == 0)
         {
             isDecoy = true;
+        }
+    }
+
+    private void Update()
+    {
+        if(player.transform.position.y < transform.position.y - 10)
+        {
+            Destroy(gameObject);
         }
     }
 
