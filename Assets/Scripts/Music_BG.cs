@@ -9,13 +9,13 @@ public class Music_BG : MonoBehaviour
     // Start is called before the first frame update
     private void Awake()
     {
-        if(MusicInstance != null && MusicInstance != this)
+        if (MusicInstance != null && MusicInstance != this)
         {
             Destroy(this.gameObject);
             return;
         }
 
         MusicInstance = this;
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this.gameObject);
     }
 }
