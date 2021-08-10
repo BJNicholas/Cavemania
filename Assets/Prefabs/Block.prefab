@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -7371934447103273201}
   m_Layer: 0
   m_Name: Block
-  m_TagString: Untagged
+  m_TagString: Block
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -123,5 +123,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   decoyChance: 10
+  emberChance: 10
+  ember: {fileID: 3492473501276609162, guid: 620293309777de744b19d29a4c9c4116, type: 3}
   isDecoy: 0
+  canBeDecoy: 1
   demonBox: {fileID: 659022819171149096, guid: d9450c41fb01554458234cca175c57cb, type: 3}
