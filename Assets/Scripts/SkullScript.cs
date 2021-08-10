@@ -45,7 +45,7 @@ public class SkullScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             GetComponent<AudioSource>().clip = flyingSound;
-            GetComponent<AudioSource>().Play();
+            //GetComponent<AudioSource>().Play();
 
         }
     }
