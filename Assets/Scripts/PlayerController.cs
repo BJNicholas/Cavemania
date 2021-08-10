@@ -42,7 +42,6 @@ public class PlayerController : MonoBehaviour
     float coolDown = 0;
     private void FixedUpdate()
     {
-        print(rb.velocity.y);
         coolDown += 1;
         //"Jumping"
         if (Input.GetKey(KeyCode.Space) && GameManager.instance.mana != 0)

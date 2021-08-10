@@ -22,6 +22,7 @@ public class GameManager : MonoBehaviour
     public Text pickupBonus;
     public GameObject PauseMenu;
     public GameObject HowToPlayMenu;
+    public Sprite slimeHurt;
 
     bool isPaused = true;
     bool tutorialOn = true;
@@ -54,6 +55,8 @@ public class GameManager : MonoBehaviour
         if (health <= 0)
         {
             PlayerController.instance.gameObject.GetComponent<PlayerController>().enabled = false;
+            player.GetComponent<SpriteRenderer>().sprite = slimeHurt;
+            player.GetComponent<Animator>().enabled = false;
             player.GetComponent<CircleCollider2D>().enabled = false;
             player.GetComponent<BoxCollider2D>().enabled = false;
             player.transform.Rotate(0, 0, 3);

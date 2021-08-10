@@ -8,6 +8,8 @@ public class SlimeBallScript : MonoBehaviour
     public float lifeTime;
     public float damage;
 
+    public GameObject bloodSplat;
+
     Rigidbody2D rb;
 
     private void Start()
@@ -31,6 +33,7 @@ public class SlimeBallScript : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
+            Instantiate(bloodSplat, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
             Destroy(gameObject);
         }

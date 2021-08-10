@@ -1899,6 +1899,7 @@ MonoBehaviour:
   pickupBonus: {fileID: 1081808100}
   PauseMenu: {fileID: 1781372386}
   HowToPlayMenu: {fileID: 546143862}
+  slimeHurt: {fileID: 21300000, guid: 25c6f257d738c3448b30d02fe6a0cab4, type: 3}
 --- !u!4 &680547927
 Transform:
   m_ObjectHideFlags: 0
