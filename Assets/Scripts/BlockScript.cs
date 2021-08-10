@@ -6,7 +6,11 @@ public class BlockScript : MonoBehaviour
 {
     [Range(1,10)]
     public int decoyChance;
+    [Range(1, 10)]
+    public int emberChance;
+    public GameObject ember;
     public bool isDecoy = false;
+    public bool canBeDecoy = true;
 
     public GameObject demonBox;
 
@@ -14,10 +18,19 @@ public class BlockScript : MonoBehaviour
     private void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        int roll = Random.Range(0, decoyChance);
-        if(roll == 0)
+        if (canBeDecoy)
         {
-            isDecoy = true;
+            int roll = Random.Range(0, decoyChance);
+            if (roll == 0)
+            {
+                isDecoy = true;
+            }
+            int dice = Random.Range(0, emberChance);
+            if (dice == 0)
+            {
+                GameObject flame = Instantiate(ember, transform);
+                flame.transform.position = new Vector2(transform.position.x, transform.position.y + 1);
+            }
         }
     }
 
@@ -43,6 +56,10 @@ public class BlockScript : MonoBehaviour
 
                 GameManager.instance.health -= 10;
             }
+        }
+        if(collision.gameObject.tag == "Pickup")
+        {
+            Destroy(collision.gameObject);
         }
     }
 }
