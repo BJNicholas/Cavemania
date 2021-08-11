@@ -16,6 +16,5 @@ public class Music_BG : MonoBehaviour
         }
 
         MusicInstance = this;
-        DontDestroyOnLoad(this.gameObject);
     }
 }
