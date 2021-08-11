@@ -5,21 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Music_Menu : MonoBehaviour
 {
-    static AudioListener backgroundMusic;
+    static AudioListener sound;
     private float musicVolume = 1f;
     //what the volume of the audio source will be
 
     private void Awake()
     {
         //DontDestroyOnLoad(transform.gameObject);
-        GameObject music = GameObject.Find("Main Camera");
-        backgroundMusic = music.GetComponent<AudioListener>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-       
+        GameObject music = GameObject.Find("BackgroundMusic");
+        sound = FindObjectOfType<AudioListener>();
     }
 
     // Update is called once per frame
