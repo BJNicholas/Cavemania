@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Music_Menu : MonoBehaviour
 {
-    static AudioSource backgroundMusic;
+    static AudioListener sound;
     private float musicVolume = 1f;
     //what the volume of the audio source will be
 
@@ -13,19 +13,13 @@ public class Music_Menu : MonoBehaviour
     {
         //DontDestroyOnLoad(transform.gameObject);
         GameObject music = GameObject.Find("BackgroundMusic");
-        backgroundMusic = music.GetComponent<AudioSource>();
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-       
+        sound = FindObjectOfType<AudioListener>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        backgroundMusic.volume = musicVolume;
+        AudioListener.volume = musicVolume;
     }
 
     public void updateVolume(float volume)
