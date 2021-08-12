@@ -62,4 +62,11 @@ public class BlockScript : MonoBehaviour
             Destroy(collision.gameObject);
         }
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Pickup")
+        {
+            Destroy(collision.gameObject);
+        }
+    }
 }

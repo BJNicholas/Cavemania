@@ -7,21 +7,24 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [Header("Game Variables")]
     public float score = 0;
     public float bankedScore;
     float yPos;
     public float gravityStrength;
     public float healthLossRate;
-
+    [Header("Player Stats")]
     public float health;
     public float mana;
 
     GameObject player;
+    [Header("UI")]
     public GameObject GameOverMenu;
     public Text trueScore;
-    public Text pickupBonus;
+    public Text pickupBonus;                                           
     public GameObject PauseMenu;
     public GameObject HowToPlayMenu;
+    [Header("Sprites")]
     public Sprite slimeHurt;
 
     bool isPaused = true;
