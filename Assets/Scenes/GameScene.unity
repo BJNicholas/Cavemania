@@ -924,7 +924,7 @@ PrefabInstance:
     - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: slimeTrail
       value: 
-      objectReference: {fileID: 580130495}
+      objectReference: {fileID: 730433422}
     - target: {fileID: 2993877805946634749, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: m_Time
       value: 0.5
@@ -2094,6 +2094,11 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &730433422 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3891472955833176655, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+  m_PrefabInstance: {fileID: 352460438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &736667268
 GameObject:
   m_ObjectHideFlags: 0
