@@ -8,6 +8,7 @@ public class uiManager : MonoBehaviour
     public Text scoreTXT;
     public Slider healthBar;
     public Slider manaBar;
+    public Text coinCounter;
 
 
 
@@ -16,5 +17,6 @@ public class uiManager : MonoBehaviour
         healthBar.value = GameManager.instance.health;
         manaBar.value = GameManager.instance.mana;
         scoreTXT.text = GameManager.instance.score.ToString("00");
+        coinCounter.text = GameManager.instance.bankedScore.ToString("00");
     }
 }
