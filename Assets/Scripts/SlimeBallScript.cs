@@ -9,6 +9,7 @@ public class SlimeBallScript : MonoBehaviour
     public float damage;
 
     public GameObject bloodSplat;
+    public GameObject slimeSplat;
 
     Rigidbody2D rb;
 
@@ -26,6 +27,7 @@ public class SlimeBallScript : MonoBehaviour
         if(countdown >= lifeTime)
         {
             Destroy(gameObject);
+            Instantiate(slimeSplat, transform.position, Quaternion.identity);
         }
     }
 
@@ -38,6 +40,7 @@ public class SlimeBallScript : MonoBehaviour
         }
         else if (collision.gameObject.tag != "Player")
         {
+            Instantiate(slimeSplat, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

@@ -903,7 +903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: speed
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: runSound
@@ -920,6 +920,22 @@ PrefabInstance:
     - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: rateOfFire
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: slimeTrail
+      value: 
+      objectReference: {fileID: 580130495}
+    - target: {fileID: 2993877805946634749, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: m_Time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993877805946634749, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: m_Emitting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993877805946634749, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: m_MinVertexDistance
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5958285796658372920, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: m_Enabled
