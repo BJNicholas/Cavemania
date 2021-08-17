@@ -32,6 +32,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        Cursor.visible = false;
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         Time.timeScale = 0;
@@ -152,6 +153,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         PauseMenu.SetActive(false);
         isPaused = false;
+        Cursor.visible = true;
     }
 
 }

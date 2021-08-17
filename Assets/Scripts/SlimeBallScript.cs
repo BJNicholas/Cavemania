@@ -34,9 +34,7 @@ public class SlimeBallScript : MonoBehaviour
         if (collision.gameObject.tag == "Enemy")
         {
             Instantiate(bloodSplat, transform.position, Quaternion.identity);
-            StartCoroutine(CameraShake.instance.Shake(0.5f, 3f));
             Destroy(collision.gameObject);
-            Destroy(gameObject);
         }
         else if (collision.gameObject.tag != "Player")
         {

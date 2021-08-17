@@ -46,6 +46,7 @@ public class PlayerController : MonoBehaviour
         //"Jumping"
         if (Input.GetKey(KeyCode.Space) && GameManager.instance.mana != 0)
         {
+            StartCoroutine(CameraShake.instance.Shake(0.1f, 0.5f));
             rb.AddForce(Vector2.up * jumpForce);
             jumping = true;
             GameManager.instance.mana -= 1f;
