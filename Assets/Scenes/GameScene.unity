@@ -903,7 +903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: speed
-      value: 50
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: runSound
@@ -920,6 +920,22 @@ PrefabInstance:
     - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: rateOfFire
       value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 181018061822169823, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: slimeTrail
+      value: 
+      objectReference: {fileID: 580130495}
+    - target: {fileID: 2993877805946634749, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: m_Time
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993877805946634749, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: m_Emitting
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2993877805946634749, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: m_MinVertexDistance
+      value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 5958285796658372920, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: m_Enabled
@@ -1704,6 +1720,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 546143862}
   m_CullTransparentMesh: 1
+--- !u!1 &580130495 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3891472955833176655, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+  m_PrefabInstance: {fileID: 352460438}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &589443332
 GameObject:
   m_ObjectHideFlags: 0

@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip runSound;
 
+    public GameObject slimeTrail;
+
     private void Start()
     {
         instance = this;
@@ -97,9 +99,21 @@ public class PlayerController : MonoBehaviour
         {
             gravityEffectOnPlayer = 1;
         }
+
+        //Slime Trail Activation
+        if (collision.gameObject.tag == "Block")
+        {
+            slimeTrail.SetActive(true);
+        }
+        else
+        {
+            slimeTrail.SetActive(false);
+        }
+
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         gravityEffectOnPlayer = 1;
     }
+          
 }
