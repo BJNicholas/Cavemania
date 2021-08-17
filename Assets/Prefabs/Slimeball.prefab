@@ -103,6 +103,7 @@ MonoBehaviour:
   lifeTime: 500
   damage: 10
   bloodSplat: {fileID: 7329865610617848952, guid: 52eb885fb5c129b44ba878038138ffd4, type: 3}
+  slimeSplat: {fileID: 7329865610617848952, guid: 7263f8187574b1148a1d438bd6eeb473, type: 3}
 --- !u!50 &911847040551627936
 Rigidbody2D:
   serializedVersion: 4
