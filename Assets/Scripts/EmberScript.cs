@@ -23,6 +23,7 @@ public class EmberScript : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
     }
     private void OnTriggerExit2D(Collider2D collision)
     {
@@ -53,6 +54,10 @@ public class EmberScript : MonoBehaviour
         if(collision.gameObject.tag == "Block")
         {
             Destroy(gameObject);
+        }
+        else if(collision.gameObject.tag == "Wall")
+        {
+            turn();
         }
     }
 }

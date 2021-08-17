@@ -60,6 +60,14 @@ public class BlockScript : MonoBehaviour
         if(collision.gameObject.tag == "Pickup")
         {
             Destroy(collision.gameObject);
+            Debug.Log(collision.gameObject.name);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Pickup")
+        {
+            Destroy(collision.gameObject);
         }
     }
 }

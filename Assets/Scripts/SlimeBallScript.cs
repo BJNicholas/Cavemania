@@ -37,7 +37,6 @@ public class SlimeBallScript : MonoBehaviour
         {
             Instantiate(bloodSplat, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
-            Destroy(gameObject);
         }
         else if (collision.gameObject.tag != "Player")
         {

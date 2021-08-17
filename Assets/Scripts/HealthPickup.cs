@@ -23,12 +23,24 @@ public class HealthPickup : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        print(collision.gameObject.name);
         if(collision.gameObject.tag == "Player")
         {
             GameManager.instance.health += healthValue;
             GetComponent<AudioSource>().Play();
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
+        }
+        else if(collision.gameObject.tag == "Block")
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Block")
+        {
+            Destroy(gameObject);
         }
     }
 }

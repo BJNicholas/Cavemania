@@ -28,5 +28,16 @@ public class CoinPickUp : MonoBehaviour
             GetComponent<SpriteRenderer>().enabled = false;
             GetComponent<BoxCollider2D>().enabled = false;
         }
+        else if (collision.gameObject.tag == "Block")
+        {
+            Destroy(gameObject);
+        }
+    }
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.tag == "Block")
+        {
+            Destroy(gameObject);
+        }
     }
 }
