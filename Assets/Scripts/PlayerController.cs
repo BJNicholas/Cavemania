@@ -25,6 +25,8 @@ public class PlayerController : MonoBehaviour
     public AudioClip jumpSound;
     public AudioClip runSound;
 
+    public GameObject slimeTrail;
+
     private void Start()
     {
         instance = this;
@@ -42,11 +44,11 @@ public class PlayerController : MonoBehaviour
     float coolDown = 0;
     private void FixedUpdate()
     {
-        print(rb.velocity.y);
         coolDown += 1;
         //"Jumping"
         if (Input.GetKey(KeyCode.Space) && GameManager.instance.mana != 0)
         {
+            StartCoroutine(CameraShake.instance.Shake(0.1f, 0.5f));
             rb.AddForce(Vector2.up * jumpForce);
             jumping = true;
             GameManager.instance.mana -= 1f;
@@ -98,9 +100,21 @@ public class PlayerController : MonoBehaviour
         {
             gravityEffectOnPlayer = 1;
         }
+
+        //Slime Trail Activation
+        if (collision.gameObject.tag == "Block")
+        {
+            slimeTrail.SetActive(true);
+        }
+        else
+        {
+            slimeTrail.SetActive(false);
+        }
+
     }
     private void OnCollisionExit2D(Collision2D collision)
     {
         gravityEffectOnPlayer = 1;
     }
+          
 }

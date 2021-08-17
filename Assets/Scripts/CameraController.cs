@@ -16,6 +16,9 @@ public class CameraController : MonoBehaviour
 
     private void Update()
     {
-        transform.position = new Vector3(0, target.transform.position.y, -10);
+        if (target.transform.position.y < transform.position.y)
+        {
+            transform.position = new Vector3(0, target.transform.position.y, -10);
+        }
     }
 }

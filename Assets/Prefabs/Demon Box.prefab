@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6109311498239993380}
   - component: {fileID: 7304201033748078291}
   - component: {fileID: 7890813459190212739}
+  - component: {fileID: 9008335529801785234}
   m_Layer: 0
   m_Name: Demon Box
   m_TagString: Enemy
@@ -129,3 +130,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &9008335529801785234
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659022819171149096}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ef3f1efecda0ec54790cb993941de202, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  decoyChance: 0
+  isDecoy: 0
+  canBeDecoy: 0
+  demonBox: {fileID: 0}

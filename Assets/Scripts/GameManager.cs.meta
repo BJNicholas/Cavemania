@@ -3,7 +3,13 @@ guid: 6470fe956e9243f4b88393796b2a62a3
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - GameOverMenu: {instanceID: 0}
+  - trueScore: {instanceID: 0}
+  - pickupBonus: {instanceID: 0}
+  - PauseMenu: {instanceID: 0}
+  - HowToPlayMenu: {instanceID: 0}
+  - slimeHurt: {fileID: 21300000, guid: 25c6f257d738c3448b30d02fe6a0cab4, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

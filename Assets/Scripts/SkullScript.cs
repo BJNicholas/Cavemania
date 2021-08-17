@@ -10,7 +10,7 @@ public class SkullScript : MonoBehaviour
 
     Rigidbody2D rb;
     GameObject player;
-
+    
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -20,6 +20,10 @@ public class SkullScript : MonoBehaviour
     private void Update()
     {
         gameObject.transform.position = Vector3.MoveTowards(transform.position, player.transform.position, speed * Time.deltaTime);
+        if (player.transform.position.y < transform.position.y - 30)
+        {
+            Destroy(gameObject);
+        }
     }
 
 
@@ -41,7 +45,7 @@ public class SkullScript : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             GetComponent<AudioSource>().clip = flyingSound;
-            GetComponent<AudioSource>().Play();
+            //GetComponent<AudioSource>().Play();
 
         }
     }

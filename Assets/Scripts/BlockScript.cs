@@ -6,15 +6,39 @@ public class BlockScript : MonoBehaviour
 {
     [Range(1,10)]
     public int decoyChance;
+    [Range(1, 10)]
+    public int emberChance;
+    public GameObject ember;
     public bool isDecoy = false;
+    public bool canBeDecoy = true;
 
     public GameObject demonBox;
+
+    GameObject player;
     private void Awake()
     {
-        int roll = Random.Range(0, decoyChance);
-        if(roll == 0)
+        player = GameObject.FindGameObjectWithTag("Player");
+        if (canBeDecoy)
         {
-            isDecoy = true;
+            int roll = Random.Range(0, decoyChance);
+            if (roll == 0)
+            {
+                isDecoy = true;
+            }
+            int dice = Random.Range(0, emberChance);
+            if (dice == 0)
+            {
+                GameObject flame = Instantiate(ember, transform);
+                flame.transform.position = new Vector2(transform.position.x, transform.position.y + 1);
+            }
+        }
+    }
+
+    private void Update()
+    {
+        if(player.transform.position.y < transform.position.y - 10)
+        {
+            Destroy(gameObject);
         }
     }
 
@@ -32,6 +56,18 @@ public class BlockScript : MonoBehaviour
 
                 GameManager.instance.health -= 10;
             }
+        }
+        if(collision.gameObject.tag == "Pickup")
+        {
+            Destroy(collision.gameObject);
+            Debug.Log(collision.gameObject.name);
+        }
+    }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Pickup")
+        {
+            Destroy(collision.gameObject);
         }
     }
 }

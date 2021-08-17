@@ -1,28 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    [Header("Game Variables")]
     public float score = 0;
+    public float bankedScore;
     float yPos;
     public float gravityStrength;
     public float healthLossRate;
-
+    [Header("Player Stats")]
     public float health;
     public float mana;
 
     GameObject player;
+    [Header("UI")]
     public GameObject GameOverMenu;
+    public Text trueScore;
+    public Text pickupBonus;                                           
     public GameObject PauseMenu;
     public GameObject HowToPlayMenu;
+    [Header("Sprites")]
+    public Sprite slimeHurt;
 
     bool isPaused = true;
+    bool tutorialOn = true;
 
     private void Start()
     {
+        Cursor.visible = false;
         instance = this;
         player = GameObject.FindGameObjectWithTag("Player");
         Time.timeScale = 0;
@@ -31,13 +41,26 @@ public class GameManager : MonoBehaviour
     {
         health -= healthLossRate * (health / 100);
         health = Mathf.Clamp(health, 0, 100);
+
+        trueScore.text = score.ToString("00");
+        pickupBonus.text = bankedScore.ToString();
+        if (health <= 0)
+        {
+            if (bankedScore > 0)
+            {
+                bankedScore -= 1;
+                score += 1;
+            }
+        }
     }
 
     private void Update()
     {
-        if(health <= 0)
+        if (health <= 0)
         {
             PlayerController.instance.gameObject.GetComponent<PlayerController>().enabled = false;
+            player.GetComponent<SpriteRenderer>().sprite = slimeHurt;
+            player.GetComponent<Animator>().enabled = false;
             player.GetComponent<CircleCollider2D>().enabled = false;
             player.GetComponent<BoxCollider2D>().enabled = false;
             player.transform.Rotate(0, 0, 3);
@@ -55,10 +78,11 @@ public class GameManager : MonoBehaviour
 
             if(Input.GetKeyDown(KeyCode.Escape))
             {
-                PauseMenu.SetActive(true);            
+                PauseMenu.SetActive(true);
+                tutorialOn = false;
                 PauseGame();
             }
-            if(isPaused)
+            if(isPaused && !tutorialOn)
             {
                 if(Input.GetKeyDown("r"))
                 {
@@ -129,6 +153,7 @@ public class GameManager : MonoBehaviour
         Time.timeScale = 1;
         PauseMenu.SetActive(false);
         isPaused = false;
+        Cursor.visible = true;
     }
 
 }
