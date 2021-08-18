@@ -10,6 +10,8 @@ public class EmberScript : MonoBehaviour
     GameObject player;
     Rigidbody2D rb;
 
+    public GameObject emberSplat;
+
 
     private void Start()
     {
@@ -49,10 +51,12 @@ public class EmberScript : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             GameManager.instance.health -= damage;
+            Instantiate(emberSplat, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         if(collision.gameObject.tag == "Block")
         {
+            Instantiate(emberSplat, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
         else if(collision.gameObject.tag == "Wall")
