@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damage: 10
   speed: 10
+  emberSplat: {fileID: 7329865610617848952, guid: a8364b8a74bb6f640823c47bcc998f02, type: 3}
 --- !u!50 &-212023642217690670
 Rigidbody2D:
   serializedVersion: 4
