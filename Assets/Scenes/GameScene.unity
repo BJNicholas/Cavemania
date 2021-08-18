@@ -965,6 +965,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1178379705182932297, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: checkRadius
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: -1178379705182932297, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: groundCheck
+      value: 
+      objectReference: {fileID: 1023257564}
+    - target: {fileID: -1178379705182932297, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+      propertyPath: whatIsGround.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 181018061822169816, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
       propertyPath: m_Enabled
       value: 1
@@ -2868,6 +2880,11 @@ CanvasRenderer:
 --- !u!1 &1023257563 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5361359003300347440, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
+  m_PrefabInstance: {fileID: 352460438}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1023257564 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 1772400628142982950, guid: c7920e69b24361944b05c91c5c1b407b, type: 3}
   m_PrefabInstance: {fileID: 352460438}
   m_PrefabAsset: {fileID: 0}
 --- !u!82 &1023257565
