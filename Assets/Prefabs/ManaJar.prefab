@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8019266491741932005}
   - component: {fileID: -1054733130162936350}
   - component: {fileID: -6720382942392980218}
+  - component: {fileID: 287087756656784791}
   m_Layer: 0
   m_Name: ManaJar
   m_TagString: Pickup
@@ -240,3 +241,15 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &287087756656784791
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1126208892767307832}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd2689e974aaec6478e9237dbf0fb05c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
