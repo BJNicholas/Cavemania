@@ -37,6 +37,7 @@ public class SlimeBallScript : MonoBehaviour
         {
             Instantiate(bloodSplat, transform.position, Quaternion.identity);
             Destroy(collision.gameObject);
+            GameManager.instance.bankedScore += 5;
         }
         else if (collision.gameObject.tag != "Player")
         {
