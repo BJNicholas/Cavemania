@@ -59,7 +59,7 @@ public class EmberScript : MonoBehaviour
             Instantiate(emberSplat, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
-        else if(collision.gameObject.tag == "Wall")
+        else if(collision.gameObject.tag == "Wall" || collision.gameObject.name == "Ember(Clone)")
         {
             turn();
         }

@@ -23,7 +23,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Audio Clips")]
     public AudioClip jumpSound;
-    public AudioClip runSound;
+    //public AudioClip runSound;
 
     private void Start()
     {

@@ -63,8 +63,9 @@ public class BlockScript : MonoBehaviour
             Debug.Log(collision.gameObject.name);
         }
     }
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
+        print(collision.gameObject.name);
         if (collision.gameObject.tag == "Pickup")
         {
             Destroy(collision.gameObject);

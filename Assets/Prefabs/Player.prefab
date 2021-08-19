@@ -120,7 +120,7 @@ CircleCollider2D:
   m_GameObject: {fileID: 181018061822169822}
   m_Enabled: 1
   m_Density: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: 03b5e26b5c07afe499b45ecad361a01d, type: 2}
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
@@ -194,7 +194,6 @@ MonoBehaviour:
   rateOfFire: 0
   jumpSound: {fileID: 0}
   runSound: {fileID: 0}
-  slimeTrail: {fileID: 0}
 --- !u!114 &-1178379705182932297
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -207,6 +206,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c616e146cf1b85949b6fd23e24cbaa17, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 0}
+  checkRadius: 0
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &3891472955833176655
 GameObject:
   m_ObjectHideFlags: 0

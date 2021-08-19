@@ -44,5 +44,9 @@ public class SlimeBallScript : MonoBehaviour
             Instantiate(slimeSplat, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
+        else if (collision.gameObject.tag == "Block")
+        {
+            Destroy(collision.gameObject);
+        }
     }
 }
